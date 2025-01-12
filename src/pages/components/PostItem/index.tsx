@@ -60,7 +60,7 @@ const PostItem: React.FC<PropsType> = ({
                     </div>
                 </div>
                 <div className="ass1-section__content">
-                    test====
+                    test===
                     <p
                         dangerouslySetInnerHTML={{
                             __html: isHightlight
