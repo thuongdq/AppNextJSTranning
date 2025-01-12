@@ -28,7 +28,7 @@ const create: React.FC<PropsType> = () => {
     const [token] = useGlobalState('token');
     const [postData, setPostData] = useState(initState);
 
-    const onChangeDetailForm = (key: String, value: any) => {
+    const onChangeDetailForm = (key: string, value: any) => {
         setPostData({ ...postData, [key]: value });
     };
 

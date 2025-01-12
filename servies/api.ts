@@ -17,7 +17,7 @@ const api = {
         { data, method = 'GET', token }: ConfigType = {}
     ) => {
         const _url = `${BASE_URL}${url}`;
-        const _config = {
+        let _config: any = {
             method,
             headers: {
                 'Content-Type': 'application/json',

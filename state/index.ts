@@ -22,7 +22,7 @@ type TypeInitState = {
     token?: string;
 };
 
-const initialState: TypeInitState = {
+const initialState: any = {
     currentUser: null,
     categories: [],
     token: '',

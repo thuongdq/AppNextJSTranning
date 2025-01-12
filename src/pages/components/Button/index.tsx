@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
             type={type}
             className={className}
             onClick={onClick}
-            disable={isLoading}
+            disabled={isLoading}
         >
             {isLoading && (
                 <svg

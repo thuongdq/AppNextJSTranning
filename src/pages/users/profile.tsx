@@ -7,8 +7,11 @@ function UserProfile() {
     const [currentUser, setCurrentUser] = useGlobalState('currentUser');
     const [user, setUser]: [user: TypeUser | null, setUser: any] =
         useState(currentUser);
-    const [objFile, setObjFile] = useState({ file: null, base64URL: '' });
-    const inputFileElement = useRef(null);
+    const [objFile, setObjFile] = useState<{
+        file: File | null;
+        base64URL: string;
+    }>({ file: null, base64URL: '' });
+    const inputFileElement = useRef<HTMLInputElement>(null);
 
     const handleOnChange = (key: string) => (evt: any) => {
         setUser({ ...user, [key]: evt.target.value });

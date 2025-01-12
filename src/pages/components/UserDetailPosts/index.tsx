@@ -29,13 +29,13 @@ const UserDetailPosts: React.FC<PropsType> = ({
     return (
         <>
             <div className="container">
-                <Masonry
+                {/* <Masonry
                     className={
                         'ass1-section__wrap row ass1-section__isotope-init'
                     } // default ''
-                >
-                    {childElements}
-                </Masonry>
+                > */}
+                {childElements}
+                {/* </Masonry> */}
             </div>
         </>
     );

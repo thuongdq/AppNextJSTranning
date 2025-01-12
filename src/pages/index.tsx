@@ -58,7 +58,7 @@ export const getServerSideProps: GetServerSideProps<HomeDataProps> = async (
 ) => {
     console.log(context.req.headers.cookie);
 
-    const ctx = context as NextPageContext;
+    const ctx = context as unknown as NextPageContext;
 
     const [token, userToken] = getTokenSSRAndCSR(ctx);
     const userId = userToken?.id;

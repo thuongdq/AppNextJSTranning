@@ -8,7 +8,7 @@ function useAuthen() {
     const [token] = useGlobalState('token');
     const router = useRouter();
     useEffect(() => {
-        const userToken = decodeJWT(token);
+        const userToken = decodeJWT(token!);
         if (!(userToken && userToken.id && userToken.email)) {
             router.push('/login');
         }
@@ -20,7 +20,7 @@ function useNotAuthen() {
     const [token] = useGlobalState('token');
     const router = useRouter();
     useEffect(() => {
-        const userToken = decodeJWT(token);
+        const userToken = decodeJWT(token!);
         if (userToken && userToken.id && userToken.email) {
             router.push('/');
         }

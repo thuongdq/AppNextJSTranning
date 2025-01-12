@@ -49,7 +49,7 @@ const PostDetailSidebar: React.FC<PropsType> = ({
                 >
                     Chọn danh mục
                 </span>
-                {listCategories.map((item, index) => {
+                {listCategories.map((item: any, index: number) => {
                     const findIdx = category.findIndex(
                         (cateId) => cateId == item.id.toString()
                     );

@@ -6,6 +6,7 @@ import {
     GetServerSideProps,
     NextPage,
     InferGetServerSidePropsType,
+    NextPageContext,
 } from 'next';
 import { getTokenSSRAndCSR } from '../../../../helpers';
 import postServices from '../../../../servies/postService';
@@ -75,7 +76,7 @@ export const getServerSideProps: GetServerSideProps<PropsType> = async (
 ) => {
     console.log(context.req.headers.cookie);
 
-    const ctx = context as NextPageContext;
+    const ctx = context as unknown as NextPageContext;
     const postId = ctx.query.postId;
 
     const [token, userToken] = getTokenSSRAndCSR(ctx);

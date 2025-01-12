@@ -20,7 +20,7 @@ const Category: NextPage<CategoryProps> = ({ listposts }: CategoryProps) => {
     // const cateInfo = categories.find((cate) => cate.id == cateId)[0];
     const cateInfo = useMemo(() => {
         const findObject = categories.find(
-            (cate) => cate.id === Number(cateId)
+            (cate: any) => cate.id === Number(cateId)
         );
         return findObject?.text || '';
     }, [categories, cateId]);
@@ -50,11 +50,16 @@ const Category: NextPage<CategoryProps> = ({ listposts }: CategoryProps) => {
                     Danh mục: <strong>{cateInfo}</strong>
                 </h3>
             </div>
-            <Masonry
+            {/* <Masonry className="ass1-section__wrap row ass1-section__isotope-init"> */}
+            {childElements.map((child, index) => (
+                <div key={index}>{child}</div>
+            ))}
+            {/* </Masonry> */}
+            {/* <Masonry
                 className={'ass1-section__wrap row ass1-section__isotope-init'} // default ''
             >
                 {childElements}
-            </Masonry>
+            </Masonry> */}
         </>
     );
 };

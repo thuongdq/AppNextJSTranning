@@ -92,11 +92,11 @@ const Search: NextPage<SearchProps> = ({ listposts }: SearchProps) => {
                     Tìm kiếm được <strong>{listposts.length}</strong> kết quả
                 </p>
             </div>
-            <Masonry
+            {/* <Masonry
                 className={'ass1-section__wrap row ass1-section__isotope-init'} // default ''
-            >
-                {childElements}
-            </Masonry>
+            > */}
+            {childElements}
+            {/* </Masonry> */}
         </>
     );
 };

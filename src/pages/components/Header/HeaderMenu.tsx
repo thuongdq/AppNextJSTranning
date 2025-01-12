@@ -14,7 +14,7 @@ const HeaderMenu: React.FC<HeaderMenuProps> = () => {
                     <div className="ass1-header__nav">
                         <div className="container">
                             <ul>
-                                {categories.map((cate) => {
+                                {categories.map((cate: any) => {
                                     return (
                                         <li key={cate.id}>
                                             <Link

@@ -36,7 +36,7 @@ const postServices = {
         });
     },
     editPost: async (
-        { post_content, url_image, category, obj_image, postid }: TypePostEdit,
+        { post_content, url_image, category, obj_image, postid }: any,
         token: string
     ) => {
         const url = '/post/edit.php';
@@ -54,7 +54,7 @@ const postServices = {
             token,
         });
     },
-    getPostDetail: async ({ postId }: { postId: string }) => {
+    getPostDetail: async ({ postId }: { postId: any }) => {
         if (!postId) {
             return {
                 status: 500,
@@ -109,7 +109,7 @@ const postServices = {
         const url = `/post/getListByCategory.php?pagesize=${pagesize}&currPage=${currPage}&tagIndex=${categoryId}`;
         return api.callJson(url);
     },
-    getCommentsByPostId: async ({ postId }: { postId: string }) => {
+    getCommentsByPostId: async ({ postId }: { postId: any }) => {
         const url = `/comment/comments.php?postid=${postId}`;
         return api.callJson(url);
     },

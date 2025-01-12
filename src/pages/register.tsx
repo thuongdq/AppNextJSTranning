@@ -37,13 +37,14 @@ function register() {
         setRegisterData({ ...registerData, [key]: { value, error } });
     };
 
+    // Duyệt qua các thuộc tính của registerData và ép kiểu key
     const isValidate = useMemo(() => {
         for (let key in registerData) {
-            for (let key in registerData) {
-                const error: string = registerData[key].error;
-                if (error !== '') return false;
-            }
-            return true;
+            // Kiểu key được xác định là keyof typeof registerData
+            const error: string =
+                registerData[key as keyof typeof registerData].error;
+
+            if (error !== '') return false;
         }
         return true;
     }, [registerData]);

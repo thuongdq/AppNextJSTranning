@@ -11,6 +11,7 @@
         "test": "jest"
     },
     "dependencies": {
+        "@types/js-cookie": "^3.0.6",
         "@types/nprogress": "^0.2.3",
         "cookie": "^1.0.2",
         "dayjs": "^1.11.13",

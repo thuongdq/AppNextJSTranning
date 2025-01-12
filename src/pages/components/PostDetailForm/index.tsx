@@ -15,7 +15,7 @@ const PostDetailForm: React.FC<PropsType> = ({
     obj_image,
     onChangeDetailForm,
 }) => {
-    const inputFileElement = useRef(null);
+    const inputFileElement = useRef<HTMLInputElement>(null);
 
     const handleChangeFile = (evt: any) => {
         console.log(evt.target.files);

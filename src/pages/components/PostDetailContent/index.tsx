@@ -5,7 +5,7 @@ import PostCommentForm from '../PostCommentForm';
 import PostCommentList from '../PostCommentList';
 import { TypeCategory, TypeComment } from '@/pages/post/[postId]';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import postServices from '../../../../servies/postService';
 import { useRouter } from 'next/router';
 import { useGlobalState } from '../../../../state';
@@ -20,9 +20,19 @@ const PostDetailContent: React.FC<PropsType> = ({
     listComments: initListComments,
 }) => {
     const router = useRouter();
-    const [token] = useGlobalState('token') as string;
+    const [token] = useGlobalState<string>('token');
     const postid = router.query.postId as string;
     const [listComments, setListComments] = useState(initListComments);
+    useEffect(() => {
+        if (!token) {
+            console.error('Token is missing');
+            router.push('/login');
+            return;
+        }
+
+        // Xử lý tiếp với token
+        console.log('Token:', token);
+    }, [token, router]);
 
     const hanSubmitForm = async (
         commentValue: string,

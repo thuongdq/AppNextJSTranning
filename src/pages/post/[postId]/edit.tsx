@@ -49,7 +49,7 @@ const PostEdit: PostProps = ({ postDetailData, postCategories }) => {
         };
     });
 
-    const onChangeDetailForm = (key: String, value: any) => {
+    const onChangeDetailForm = (key: string, value: any) => {
         if (key === 'obj_image') {
             setPostData({ ...postData, [key]: value, url_image: '' });
             return;
@@ -113,7 +113,7 @@ export const getServerSideProps: GetServerSideProps<PropsEditType> = async (
 ) => {
     console.log(context.req.headers.cookie);
 
-    const ctx = context as NextPageContext;
+    const ctx = context as unknown as NextPageContext;
     const postId = ctx.query.postId as string;
 
     const [token, userToken] = getTokenSSRAndCSR(ctx);
