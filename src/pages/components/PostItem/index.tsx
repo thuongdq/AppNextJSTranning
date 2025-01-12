@@ -25,7 +25,7 @@ const PostItem: React.FC<PropsType> = ({
     // console.log('isOwner', isOwner);
 
     const timeFormart = dayjs(post?.time_added).fromNow();
-
+    console.log(process.env.NEXT_PUBLIC_PREFIX_URL);
     if (!post) return false;
     return (
         <div className={`ass1-section__item ${customClass}`}>
@@ -60,7 +60,7 @@ const PostItem: React.FC<PropsType> = ({
                     </div>
                 </div>
                 <div className="ass1-section__content">
-                    test===
+                    test==
                     <p
                         dangerouslySetInnerHTML={{
                             __html: isHightlight
