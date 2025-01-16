@@ -3,12 +3,14 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "export": "next export",
-        "test": "jest"
+        "build": "node scripts/env.script.js dev && next build",
+        "build:dev": "node scripts/env.script.js dev && next build",
+        "build:prod": "node scripts/env.script.js production && next build",
+        "build:stag": "node scripts/env.script.js staging && next build",
+        "dev": "node scripts/env.script.js dev && next dev --turbopack",
+        "generate-env": "node scripts/env.script.js example",
+        "lint": "biome check --write ./",
+        "start": "node scripts/env.script.js dev && next start"
     },
     "dependencies": {
         "@types/js-cookie": "^3.0.6",
